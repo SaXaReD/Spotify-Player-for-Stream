@@ -1,0 +1,105 @@
+.widget {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  max-width: 400px;
+  background: var(--widget-background);
+  transition: background 0.3s ease;
+}
+.coverPlaceholder {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: LoadingSpin 10s linear infinite;
+}
+.cover {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: AlbumSpin 10s linear infinite;
+}
+.active {
+  --widget-background: rgba(0, 0, 0, 0.7);
+}
+.paused {
+  animation-play-state: paused; /* Отключить анимацию */
+}
+.info {
+  flex-grow: 1;
+  margin-left: 16px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  word-break: break-word;
+}
+.text {
+  text-align: center;
+  background-color: var(--md-background);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--md-on-surface);
+  text-shadow: var(--md-text-shadow);
+  white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 2px 0;
+  max-width: 250px;
+}
+#title {
+  font-weight: 500;
+}
+#artist, #album {
+  font-size: 0.9rem;
+  margin-left: -8px;
+}
+@keyframes LoadingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes AlbumSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.authorization {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+  max-width: 300px;
+  margin: 10px;
+  padding: 5px;
+}
+.authorization form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+form div {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
